@@ -1,0 +1,164 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "version": "1.0.0",
+        "title": "Fatura",
+        "description": "Fatura interview API",
+        "contact": {
+            "name": "Mohamed Ammar",
+            "email": "mohamed.ammar.dev@estshara.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/",
+            "description": "Local server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "User Auth",
+            "description": "User Authentication Service"
+        }
+    ],
+    "paths": {
+        "/auth/user/login": {
+            "post": {
+                "tags": [
+                    "User Auth"
+                ],
+                "description": "login for users",
+                "parameters": [
+                    {
+                        "name": "Accept-language",
+                        "in": "header",
+                        "schema": {
+                            "type": "string",
+                            "example": "ar",
+                            "enum": [
+                                "ar",
+                                "en"
+                            ],
+                            "default": "en"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LoginBody"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Arabic Response",
+                        "content": {
+                            "application/json": {
+                                "example": {
+                                    "statusCode": 200,
+                                    "message": "تم تسجيل الدخول بنجاح",
+                                    "user": {
+                                        "id": 1,
+                                        "name": "Mohamed Ammar",
+                                        "email": "mohamed.ammar.dev@gmail.com",
+                                        "phone": "+201094222177",
+                                        "lastLogin": "2022-05-29T18:22:38.177Z",
+                                        "birthDate": "2021-11-30",
+                                        "verifiedWith": "EMAIL",
+                                        "device": "DESKTOP",
+                                        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiJ1c2VycyIsImlhdCI6MTY1Mzg0ODU1OCwiZXhwIjoxNjUzODQ5MTU4fQ.umalkVn4UU2qwJ4d5vHN8AoW-VQ6xhAHPLGDvzaSJRI",
+                                        "refreshToken": "096c76f8-d703-4fa3-95c2-bf2d2632c766"
+                                    }
+                                },
+                                "schema": {
+                                    "$ref": "#/components/schemas/LoginResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "LoginBody": {
+                "type": "object",
+                "description": "User login body",
+                "properties": {
+                    "phone": {
+                        "type": "string",
+                        "example": "+201094222177"
+                    },
+                    "password": {
+                        "type": "string",
+                        "example": "HAppy*$2022"
+                    }
+                }
+            },
+            "LoginResponse": {
+                "type": "object",
+                "description": "User login response",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Mohamed Ammar"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "mohamed.ammar.dev@gmail.com",
+                        "format": "email"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "example": "+201094222177"
+                    },
+                    "lastLogin": {
+                        "type": "string",
+                        "example": "2022-05-29T18:22:38.177Z",
+                        "format": "date"
+                    },
+                    "birthDate": {
+                        "type": "string",
+                        "example": "2021-11-30",
+                        "format": "date"
+                    },
+                    "verifiedWith": {
+                        "type": "string",
+                        "example": "EMAIL",
+                        "enum": [
+                            "EMAIL",
+                            "PHONE",
+                            "BOTH"
+                        ]
+                    },
+                    "device": {
+                        "type": "string",
+                        "example": "DESKTOP",
+                        "enum": [
+                            "DESKTOP",
+                            "IOS",
+                            "ANDROID"
+                        ]
+                    },
+                    "accessToken": {
+                        "type": "string",
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInJvbGUiOiJ1c2VycyIsImlhdCI6MTY1Mzg0ODU1OCwiZXhwIjoxNjUzODQ5MTU4fQ.umalkVn4UU2qwJ4d5vHN8AoW-VQ6xhAHPLGDvzaSJRI"
+                    },
+                    "refreshToken": {
+                        "type": "string",
+                        "example": "096c76f8-d703-4fa3-95c2-bf2d2632c766"
+                    }
+                }
+            }
+        }
+    }
+}

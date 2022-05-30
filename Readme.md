@@ -1,7 +1,7 @@
 # Nodejs Express App
 
 # Pre-requisites
-- Install [Node.js](https://nodejs.org/en/) version 16.14.2
+- Install [Node.js](https://nodejs.org/en/) version 16.15.0 LTS
 - Install [Redis](https://phoenixnap.com/kb/install-redis-on-ubuntu-20-04)
 
 # Getting started
@@ -50,7 +50,6 @@ The tests are  written in Mocha and the assertions done using Chai
 ### Running tests using NPM Scripts
 ````
 npm run test
-
 ````
 Test files are created under test folder.
 

@@ -1,7 +1,7 @@
 # Nodejs Express App
 
 # Pre-requisites
-- Install [Node.js](https://nodejs.org/en/) version 8.0.0
+- Install [Node.js](https://nodejs.org/en/) version 16.14.2
 
 
 # Getting started
@@ -14,7 +14,7 @@ git clone  <git lab template url> <project_name>
 cd <project_name>
 npm install
 ```
-- Build and run the project
+- Build the project
 ```
 npm run build
 ```
@@ -32,7 +32,7 @@ npm run dev
 ## Getting TypeScript
 Add Typescript to project `npm`.
 ```
-npm install -D typescript
+npm install -g typescript
 ```
 
 

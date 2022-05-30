@@ -59,7 +59,13 @@ Test files are created under test folder.
 - Hexagonal Structure
 - Modular Structure
 - Dependency Injection
+- Postgres Database
+- Sequelize (ORM)
+- Redis
+- Joi (Data Validator)
 - Refresh Token
 - Open API (Swagger)
 - Localization (Arabic, English)
 - Error Handler
+- Clean Code
+- Design Pattern
